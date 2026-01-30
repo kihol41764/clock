@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Digital Clock</title>
+<style>
+  body {
+    margin: 0;
+    background: #0f172a;
+    color: #00ffcc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  .time {
+    font-size: 72px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="time" id="time"></div>
+
+<script>
+function tick() {
+  const now = new Date();
+  document.getElementById('time').textContent =
+    now.toLocaleTimeString('pl-PL');
+}
+tick();
+setInterval(tick, 1000);
+</script>
+
+</body>
+</html>
