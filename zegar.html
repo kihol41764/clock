@@ -4,16 +4,23 @@
 <meta charset="UTF-8">
 <title>Digital Clock</title>
 <style>
-  body {
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
     margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
     background: #0f172a;
     color: #00ffcc;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     font-family: Arial, sans-serif;
   }
+
   .time {
     font-size: 72px;
     font-weight: bold;
@@ -28,7 +35,7 @@
 function tick() {
   const now = new Date();
   document.getElementById('time').textContent =
-    now.toLocaleTimeString('pl-PL');
+    now.toLocaleTimeString('pl-PL', { hour12: false });
 }
 tick();
 setInterval(tick, 1000);
